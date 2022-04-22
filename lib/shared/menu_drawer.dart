@@ -3,6 +3,8 @@ import 'package:app_0/screens/intro_screen.dart';
 import 'package:app_0/screens/weather_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/sessions_screen.dart';
+
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
 
@@ -41,9 +43,13 @@ class MenuDrawer extends StatelessWidget {
             case 'Weather':
               screen = WeatherScreen();
               break;
+            case 'Training':
+              screen = SessionsScreen();
+              break;
           }
           Navigator.of(context).pop();
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => screen));
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => screen));
         },
       ));
     });
